@@ -11,12 +11,11 @@ else if (playerInput == '2'){
     playerMove = 'papier';
 }
 else if (playerInput == '3'){
-        playerMove = 'kamień';
+        playerMove = 'nożyczki';
 }
 else {
     playerMove = 'nieznany ruch';
 }
-
 printMessage('Twój ruch to: ' + playerMove);
 
 let randomNumber = Math.floor(Math.random() * 3 + 1);
@@ -28,7 +27,6 @@ let computerMove = 'nieznany ruch';
 if(randomNumber == 1){
   computerMove = 'kamień';
 }
-
 else if (randomNumber == 2){
     computerMove = 'papier';
 }
@@ -38,5 +36,29 @@ else if (randomNumber == 3){
 else {
     computerMove = 'nieznany ruch';
 }
-
 printMessage('Mój ruch to: ' + computerMove);
+
+if( computerMove == 'kamień' && playerMove == 'papier'){
+    printMessage('Ty wygrywasz!');
+  }
+else if( computerMove == 'kamień' && playerMove == 'nożyczki'){
+    printMessage('Wygrywa komputer!');
+  }
+else if( computerMove == 'papier' && playerMove == 'kamień'){
+    printMessage('Wygrywa komputer!');
+  }
+  else if( computerMove == 'papier' && playerMove == 'nożyczki'){
+    printMessage('Ty wygrywasz!');
+  }
+  else if( computerMove == 'nożyczki' && playerMove == 'kamień'){
+    printMessage('Ty wygrywasz!');
+  }
+  else if( computerMove == 'nożyczki' && playerMove == 'papier'){
+    printMessage('Wygrywa komputer!');
+  }
+else if( computerMove == playerMove){
+    printMessage('Jest remis, graj dalej!!!');
+  }
+  else {
+    printMessage('Wynik gry to : Neznany ruch gracza, graj dalej!!!');
+  }
