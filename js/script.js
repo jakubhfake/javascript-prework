@@ -52,50 +52,40 @@ else {
     computerMove = 'nieznany ruch';
 }*/
 printMessage('Ruch Bota to: ' + argComputerMove);
+
 printMessage('Bot zagrał ' + argComputerMove + ' a Ty ' + argPlayerMove);
 
-printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
-printMessage('wynik' + displayResult);
-
-let argPlayerMove = displayResult(playerInput);
-function displayResult(wynik){
+let WynikGry = displayResult(argComputerMove, argPlayerMove);
+printMessage('Wynik gry to ' + WynikGry);
     
-      if(argPlayerMove == 2){
-      printMessage('Ty wygrywasz!');
-    
-    }
-}
-/*function displayResult(argComputerMove, argPlayerMove) {
-    console.log('displayResult');
-    printMessage('Bot zagrał ' + argComputerMove + ' a Ty ' + argPlayerMove);
-
- /*if( argComputerMove == 'kamień' && argPlayerMove == 'papier' ){
-        printMessage('Ty wygrywasz!');
+function displayResult(argComputerMove, argPlayerMove) {
+ if(argComputerMove == 'kamień' && argPlayerMove == 'papier'){
+        return 'wygrywasz Ty!';
       }
       else if(argComputerMove == 'kamień' && argPlayerMove == 'nożyczki'){
-        printMessage('Wygrywa Bot!');
+        return 'wygrywa Bot!';
       }
       else if( argComputerMove == 'papier' && argPlayerMove == 'kamień'){
-        printMessage('Wygrywa Bot!');
+        return 'wygrywa Bot!';
       }
       else if( argComputerMove == 'papier' && argPlayerMove == 'nożyczki'){
-        printMessage('Ty wygrywasz!');
+        return 'Ty wygrywasz!';
       }
       else if( argComputerMove == 'nożyczki' && argPlayerMove == 'kamień'){
-        printMessage('Ty wygrywasz!');
+        return 'Ty wygrywasz!';
       }
       else if( argComputerMove == 'nożyczki' && argPlayerMove == 'papier'){
-        printMessage('Wygrywa Bot!');
+        return 'wygrywa Bot!';
       }
-      elseif( argComputerMove == argPlayerMove ){
-        printMessage('Jest remis, graj dalej!!!');
+      else if( argComputerMove == argPlayerMove ){
+        return 'mamy remis, graj dalej!!!';
       }
     else {
-        printMessage('Wynik gry to : Neznany ruch gracza, graj dalej!!!');
-        return 'nieznany ruch';
-      }
-}*/
-console.log('funkcja ' + displayResult);
+        printMessage('Graj dalej');
+        return 'nieznany ruch gracza';
+    }
+}
+
 
 /*if( computerMove == 'kamień' && playerMove == 'papier'){
     printMessage('Ty wygrywasz!');
