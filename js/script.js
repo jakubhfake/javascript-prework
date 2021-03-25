@@ -55,8 +55,10 @@ printMessage('Ruch Bota to: ' + argComputerMove);
 printMessage('Bot zagrał ' + argComputerMove + ' a Ty ' + argPlayerMove);
 
 printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+printMessage('wynik' + displayResult);
 
-function displayResult(argPlayerMove){
+let argPlayerMove = displayResult(playerInput);
+function displayResult(wynik){
     
       if(argPlayerMove == 2){
       printMessage('Ty wygrywasz!');
