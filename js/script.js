@@ -56,8 +56,8 @@ printMessage('Ruch Bota to: ' + argComputerMove);
 printMessage('Bot zagrał ' + argComputerMove + ' a Ty ' + argPlayerMove);
 
 let WynikGry = displayResult(argComputerMove, argPlayerMove);
-printMessage('Wynik gry to ' + WynikGry);
-    
+printMessage('Wynik gry to: ' + WynikGry);
+
 function displayResult(argComputerMove, argPlayerMove) {
  if(argComputerMove == 'kamień' && argPlayerMove == 'papier'){
         return 'wygrywasz Ty!';
