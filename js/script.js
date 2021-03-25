@@ -1,3 +1,7 @@
+const STONE = "kamień";
+const SCISSORS = "nożyczki";
+const PAPER = "papier";
+
 function getMoveName(argMoveId) {
   if (argMoveId == 1) {
     return "kamień";
@@ -15,19 +19,7 @@ console.log("Gracz wpisał: " + playerInput);
 
 let argPlayerMove = getMoveName(playerInput);
 console.log("dane do display " + argPlayerMove);
-/*if(playerInput == '1'){
-  playerMove = 'kamień';
-}
-else if (playerInput == '2'){
-    playerMove = 'papier';
-}
-else if (playerInput == '3'){
-        playerMove = 'nożyczki';
-}
-else {
-    playerMove = 'nieznany ruch';
-}
-*/
+
 printMessage("Twój ruch to: " + argPlayerMove);
 
 let randomNumber = Math.floor(Math.random() * 3 + 1);
@@ -36,67 +28,29 @@ console.log("Wylosowana liczba to: " + randomNumber);
 
 let argComputerMove = getMoveName(randomNumber);
 
-/*if(randomNumber == 1){
-  computerMove = 'kamień';
-}
-else if (randomNumber == 2){
-    computerMove = 'papier';
-}
-else if (randomNumber == 3){
-    computerMove = 'nożyczki';
-}
-else {
-    computerMove = 'nieznany ruch';
-}*/
 printMessage("Ruch Bota to: " + argComputerMove);
 
 printMessage("Bot zagrał " + argComputerMove + " a Ty " + argPlayerMove);
 
-let WynikGry = displayResult(argComputerMove, argPlayerMove);
-printMessage("Wynik gry to: " + WynikGry);
+let wynikGry = displayResult(argComputerMove, argPlayerMove);
+printMessage("Wynik gry to: " + wynikGry);
 
 function displayResult(argComputerMove, argPlayerMove) {
-  if (argComputerMove == "kamień" && argPlayerMove == "papier") {
+  if (argComputerMove == STONE && argPlayerMove == PAPER) {
     return "wygrywasz Ty!";
-  } else if (argComputerMove == "kamień" && argPlayerMove == "nożyczki") {
-    return "wygrywa Bot!";
-  } else if (argComputerMove == "papier" && argPlayerMove == "kamień") {
-    return "wygrywa Bot!";
-  } else if (argComputerMove == "papier" && argPlayerMove == "nożyczki") {
+  } else if (argComputerMove == PAPER && argPlayerMove == SCISSORS) {
     return "Ty wygrywasz!";
-  } else if (argComputerMove == "nożyczki" && argPlayerMove == "kamień") {
+  } else if (argComputerMove == SCISSORS && argPlayerMove == STONE) {
     return "Ty wygrywasz!";
-  } else if (argComputerMove == "nożyczki" && argPlayerMove == "papier") {
+  } else if (argComputerMove == STONE && argPlayerMove == SCISSORS) {
+    return "wygrywa Bot!";
+  } else if (argComputerMove == PAPER && argPlayerMove == STONE) {
+    return "wygrywa Bot!";
+  } else if (argComputerMove == SCISSORS && argPlayerMove == PAPER) {
     return "wygrywa Bot!";
   } else if (argComputerMove == argPlayerMove) {
     return "mamy remis, graj dalej!!!";
-  } else {
-    printMessage("Graj dalej");
-    return "nieznany ruch gracza";
   }
+  printMessage("Graj dalej");
+  return "nieznany ruch gracza";
 }
-
-/*if( computerMove == 'kamień' && playerMove == 'papier'){
-    printMessage('Ty wygrywasz!');
-  }
-else if( computerMove == 'kamień' && playerMove == 'nożyczki'){
-    printMessage('Wygrywa Bot!');
-  }
-else if( computerMove == 'papier' && playerMove == 'kamień'){
-    printMessage('Wygrywa Bot!');
-  }
-  else if( computerMove == 'papier' && playerMove == 'nożyczki'){
-    printMessage('Ty wygrywasz!');
-  }
-  else if( computerMove == 'nożyczki' && playerMove == 'kamień'){
-    printMessage('Ty wygrywasz!');
-  }
-  else if( computerMove == 'nożyczki' && playerMove == 'papier'){
-    printMessage('Wygrywa Bot!');
-  }
-else if( computerMove == playerMove){
-    printMessage('Jest remis, graj dalej!!!');
-  }
-else {
-    printMessage('Wynik gry to : Neznany ruch gracza, graj dalej!!!');
-  }*/
