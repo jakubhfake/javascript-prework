@@ -5,11 +5,11 @@ const PAPER = "papier";
 function playGame(playerInput) {
   clearMessages();
   function getMoveName(argMoveId) {
-    if (argMoveId == 1 || argMoveId == 'STONE') {
+    if (argMoveId == 1 || argMoveId == "Stone") {
       return "kamień";
-    } else if (argMoveId == 2) {
+    } else if (argMoveId == 2 || argMoveId == "Paper") {
       return "papier";
-    } else if (argMoveId == 3) {
+    } else if (argMoveId == 3 || argMoveId == "Scissors") {
       return "nożyczki";
     }
     printMessage("Nie znam ruchu o id " + argMoveId + ".");
@@ -58,11 +58,11 @@ function playGame(playerInput) {
 }
 
 document.getElementById("stone").addEventListener("click", function () {
-  playGame("STONE");
+  playGame("Stone");
 });
 document.getElementById("paper").addEventListener("click", function () {
-  playGame("2");
+  playGame("Paper");
 });
 document.getElementById("scissors").addEventListener("click", function () {
-  playGame("3");
+  playGame("Scisors");
 });
