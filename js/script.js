@@ -1,11 +1,11 @@
+const STONE = "kamień";
+const SCISSORS = "nożyczki";
+const PAPER = "papier";
+
 function playGame(playerInput) {
   clearMessages();
-  const STONE = "kamień";
-  const SCISSORS = "nożyczki";
-  const PAPER = "papier";
-
   function getMoveName(argMoveId) {
-    if (argMoveId == 1) {
+    if (argMoveId == 1 || argMoveId == 'STONE') {
       return "kamień";
     } else if (argMoveId == 2) {
       return "papier";
@@ -16,7 +16,7 @@ function playGame(playerInput) {
     return "nieznany ruch";
   }
 
-  console.log("Gracz wpisał: " + playerInput);
+  console.log("Gracz wybrał: " + playerInput);
 
   let argPlayerMove = getMoveName(playerInput);
   console.log("dane do display " + argPlayerMove);
@@ -58,7 +58,7 @@ function playGame(playerInput) {
 }
 
 document.getElementById("stone").addEventListener("click", function () {
-  playGame("1");
+  playGame("STONE");
 });
 document.getElementById("paper").addEventListener("click", function () {
   playGame("2");
