@@ -16,9 +16,6 @@ function playGame(playerInput) {
     return "nieznany ruch";
   }
 
-  /*let playerInput = prompt(
-    "Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce."
-  );*/
   console.log("Gracz wpisał: " + playerInput);
 
   let argPlayerMove = getMoveName(playerInput);
@@ -59,22 +56,13 @@ function playGame(playerInput) {
     return "nieznany ruch gracza";
   }
 }
-function buttonClicked(getElementById){
-  printMessage('Guzik został kliknięty');
-}
 
-let stoneButton = document.getElementById('stone');
-
-stoneButton.addEventListener('click', buttonClicked);
-
-let paperButton = document.getElementById('paper');
-
-paperButton.addEventListener('click', buttonClicked);
-
-let scissorsButton = document.getElementById('scissors');
-
-scissorsButton.addEventListener('click', buttonClicked);
-
-/*document.getElementById("stone").addEventListener("click", playGame('1') {
-  printMessage("Kamień");
-});*/
+document.getElementById("stone").addEventListener("click", function () {
+  playGame("1");
+});
+document.getElementById("paper").addEventListener("click", function () {
+  playGame("2");
+});
+document.getElementById("scissors").addEventListener("click", function () {
+  playGame("3");
+});
