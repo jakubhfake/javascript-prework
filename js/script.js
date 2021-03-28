@@ -21,18 +21,18 @@
 
     printMessage("Twój ruch to: " + playerInput);
 
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
+    const randomNumber = Math.floor(Math.random() * 3 + 1),
+      argComputerMove = getMoveName(randomNumber),
+      gameResult = displayResult(argComputerMove, playerInput);
 
     console.log("Wylosowana liczba to: " + randomNumber);
 
-    let argComputerMove = getMoveName(randomNumber);
     console.log("Ruch Bota do wyświetlenia: " + argComputerMove);
 
     printMessage("Ruch Bota to: " + argComputerMove);
 
     printMessage("Bot zagrał " + argComputerMove + " a Ty " + playerInput);
 
-    let gameResult = displayResult(argComputerMove, playerInput);
     printMessage("Wynik gry to: " + gameResult);
 
     function displayResult(argComputerMove, playerInput) {
