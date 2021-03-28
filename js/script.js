@@ -5,7 +5,7 @@
 
   function playGame(playerInput) {
     clearMessages();
-    function computerMove (argMoveId){
+    function computerMove(argMoveId) {
       if (argMoveId == 1) {
         return "kamień";
       } else if (argMoveId == 2) {
@@ -22,7 +22,7 @@
     printMessage("Twój ruch to: " + playerInput);
 
     const argMoveId = Math.floor(Math.random() * 3 + 1),
-     argComputerMove = computerMove(argMoveId),
+      argComputerMove = computerMove(argMoveId),
       gameResult = displayResult(argComputerMove, playerInput);
 
     console.log("Wylosowana liczba to: " + argMoveId);
