@@ -1,21 +1,22 @@
 {
   const STONE = "kamień";
-  const SCISSORS = "nożyczki";
   const PAPER = "papier";
+  const SCISSORS = "nożyczki";
+  
 
   function playGame(playerInput) {
     clearMessages();
-    function computerMove(argMoveId) {
+    const computerMove = function (argMoveId) {
       if (argMoveId == 1) {
-        return "kamień";
+        return STONE;
       } else if (argMoveId == 2) {
-        return "papier";
+        return PAPER;
       } else if (argMoveId == 3) {
-        return "nożyczki";
+        return SCISSORS;
       }
       printMessage("Nie znam ruchu o id " + argMoveId + ".");
       return "nieznany ruch";
-    }
+    };
 
     console.log("Rych gracza do wyświetlenia: " + playerInput);
 
@@ -56,12 +57,12 @@
   }
 
   document.getElementById("stone").addEventListener("click", function () {
-    playGame("kamień");
+    playGame(STONE);
   });
   document.getElementById("paper").addEventListener("click", function () {
-    playGame("papier");
+    playGame(PAPER);
   });
   document.getElementById("scissors").addEventListener("click", function () {
-    playGame("nożyczki");
+    playGame(SCISSORS);
   });
 }
