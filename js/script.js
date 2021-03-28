@@ -35,8 +35,8 @@
 
     printMessage("Bot zagrał " + argComputerMove + " a Ty " + argPlayerMove);
 
-    let wynikGry = displayResult(argComputerMove, argPlayerMove);
-    printMessage("Wynik gry to: " + wynikGry);
+    let gameResult = displayResult(argComputerMove, argPlayerMove);
+    printMessage("Wynik gry to: " + gameResult);
 
     function displayResult(argComputerMove, argPlayerMove) {
       if (argComputerMove == STONE && argPlayerMove == PAPER) {
