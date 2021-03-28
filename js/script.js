@@ -17,12 +17,9 @@
       return "nieznany ruch";
     }
 
-    console.log("Gracz wybrał: " + playerInput);
+    console.log("Rych gracza do wyświetlenia: " + playerInput);
 
-    let argPlayerMove = getMoveName(playerInput);
-    console.log("Rych gracza do wyświetlenia: " + argPlayerMove);
-
-    printMessage("Twój ruch to: " + argPlayerMove);
+    printMessage("Twój ruch to: " + playerInput);
 
     let randomNumber = Math.floor(Math.random() * 3 + 1);
 
@@ -33,39 +30,38 @@
 
     printMessage("Ruch Bota to: " + argComputerMove);
 
-    printMessage("Bot zagrał " + argComputerMove + " a Ty " + argPlayerMove);
+    printMessage("Bot zagrał " + argComputerMove + " a Ty " + playerInput);
 
-    let gameResult = displayResult(argComputerMove, argPlayerMove);
+    let gameResult = displayResult(argComputerMove, playerInput);
     printMessage("Wynik gry to: " + gameResult);
 
-    function displayResult(argComputerMove, argPlayerMove) {
-      if (argComputerMove == STONE && argPlayerMove == PAPER) {
+    function displayResult(argComputerMove, playerInput) {
+      if (argComputerMove == STONE && playerInput == PAPER) {
         return "wygrywasz Ty!";
-      } else if (argComputerMove == PAPER && argPlayerMove == SCISSORS) {
+      } else if (argComputerMove == PAPER && playerInput == SCISSORS) {
         return "Ty wygrywasz!";
-      } else if (argComputerMove == SCISSORS && argPlayerMove == STONE) {
+      } else if (argComputerMove == SCISSORS && playerInput == STONE) {
         return "Ty wygrywasz!";
-      } else if (argComputerMove == STONE && argPlayerMove == SCISSORS) {
+      } else if (argComputerMove == STONE && playerInput == SCISSORS) {
         return "wygrywa Bot!";
-      } else if (argComputerMove == PAPER && argPlayerMove == STONE) {
+      } else if (argComputerMove == PAPER && playerInput == STONE) {
         return "wygrywa Bot!";
-      } else if (argComputerMove == SCISSORS && argPlayerMove == PAPER) {
+      } else if (argComputerMove == SCISSORS && playerInput == PAPER) {
         return "wygrywa Bot!";
-      } else if (argComputerMove == argPlayerMove) {
+      } else if (argComputerMove == playerInput) {
         return "mamy remis, graj dalej!!!";
       }
       printMessage("Graj dalej nieznany ruch gracza");
-      
     }
   }
 
   document.getElementById("stone").addEventListener("click", function () {
-    playGame("1");
+    playGame("kamień");
   });
   document.getElementById("paper").addEventListener("click", function () {
-    playGame("2");
+    playGame("papier");
   });
   document.getElementById("scissors").addEventListener("click", function () {
-    playGame("3");
+    playGame("nożyczki");
   });
 }
