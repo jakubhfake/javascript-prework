@@ -20,7 +20,7 @@
     console.log("Gracz wybrał: " + playerInput);
 
     let argPlayerMove = getMoveName(playerInput);
-    console.log("dane do display " + argPlayerMove);
+    console.log("Rych gracza do wyświetlenia: " + argPlayerMove);
 
     printMessage("Twój ruch to: " + argPlayerMove);
 
@@ -29,6 +29,7 @@
     console.log("Wylosowana liczba to: " + randomNumber);
 
     let argComputerMove = getMoveName(randomNumber);
+    console.log("Ruch Bota do wyświetlenia: " + argComputerMove);
 
     printMessage("Ruch Bota to: " + argComputerMove);
 
@@ -59,12 +60,12 @@
   }
 
   document.getElementById("stone").addEventListener("click", function () {
-    playGame('1');
+    playGame("1");
   });
   document.getElementById("paper").addEventListener("click", function () {
-    playGame('2');
+    playGame("2");
   });
   document.getElementById("scissors").addEventListener("click", function () {
-    playGame('3');
+    playGame("3");
   });
 }
