@@ -2,8 +2,6 @@
   const STONE = "kamień";
   const PAPER = "papier";
   const SCISSORS = "nożyczki";
-  
-
   function playGame(playerInput) {
     clearMessages();
     const computerMove = function (argMoveId) {
@@ -19,7 +17,6 @@
     };
 
     console.log("Rych gracza do wyświetlenia: " + playerInput);
-
     printMessage("Twój ruch to: " + playerInput);
 
     const argMoveId = Math.floor(Math.random() * 3 + 1),
@@ -27,13 +24,10 @@
       gameResult = displayResult(argComputerMove, playerInput);
 
     console.log("Wylosowana liczba to: " + argMoveId);
-
     console.log("Ruch Bota do wyświetlenia: " + argComputerMove);
 
     printMessage("Ruch Bota to: " + argComputerMove);
-
     printMessage("Bot zagrał " + argComputerMove + " a Ty " + playerInput);
-
     printMessage("Wynik gry to: " + gameResult);
 
     function displayResult(argComputerMove, playerInput) {
