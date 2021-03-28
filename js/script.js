@@ -55,7 +55,7 @@
         return "mamy remis, graj dalej!!!";
       }
       printMessage("Graj dalej nieznany ruch gracza");
-      /*return "nieznany ruch gracza";*/
+      
     }
   }
 
