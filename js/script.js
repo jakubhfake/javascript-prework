@@ -5,7 +5,7 @@
 
   function playGame(playerInput) {
     clearMessages();
-    function getMoveName(argMoveId) {
+    function computerMove (argMoveId){
       if (argMoveId == 1) {
         return "kamień";
       } else if (argMoveId == 2) {
@@ -21,11 +21,11 @@
 
     printMessage("Twój ruch to: " + playerInput);
 
-    const randomNumber = Math.floor(Math.random() * 3 + 1),
-      argComputerMove = getMoveName(randomNumber),
+    const argMoveId = Math.floor(Math.random() * 3 + 1),
+     argComputerMove = computerMove(argMoveId),
       gameResult = displayResult(argComputerMove, playerInput);
 
-    console.log("Wylosowana liczba to: " + randomNumber);
+    console.log("Wylosowana liczba to: " + argMoveId);
 
     console.log("Ruch Bota do wyświetlenia: " + argComputerMove);
 
